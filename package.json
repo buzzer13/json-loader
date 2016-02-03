@@ -1,11 +1,25 @@
 {
-  "name": "json-loader",
-  "version": "0.5.4",
+  "name": "subjson-loader",
+  "version": "0.5.5",
+  "description": "JSON subobject loader module for webpack",
   "author": "Tobias Koppers @sokra",
-  "description": "json loader module for webpack",
+  "contributors": [
+    "Michael Prishlyak @buzzer13"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/webpack/json-loader.git"
-  }
+    "url": "https://github.com/buzzer13/subjson-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buzzer13/subjson-loader/issues"
+  },
+  "homepage": "https://github.com/buzzer13/subjson-loader",
+  "dependencies": {
+    "loader-utils": "^0.2.12"
+  },
+  "keywords": [
+    "webpack",
+    "json"
+  ]
 }

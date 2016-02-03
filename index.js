@@ -1,10 +1,16 @@
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
+var ldutils = require('loader-utils');
+
 module.exports = function(source) {
 	this.cacheable && this.cacheable();
-	var value = typeof source === "string" ? JSON.parse(source) : source;
-	this.value = [value];
-	return "module.exports = " + JSON.stringify(value, undefined, "\t") + ";";
+
+	const query = ldutils.parseQuery(this.query);
+	var value = typeof source === 'string' ? JSON.parse(source) : source;
+
+	query.key.split('.').map(function(key) {
+		if (typeof value !== 'undefined')
+			value = value[key];
+	});
+
+	this.values = [ value ];
+	return [ 'module.exports = ', JSON.stringify(value, undefined, '\t'), ';' ].join('');
 }
