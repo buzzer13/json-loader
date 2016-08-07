@@ -2,7 +2,7 @@
 
 ## Installation
 
-`npm install json-loader`
+`npm install --save-dev json-loader`
 
 ## Usage
 
